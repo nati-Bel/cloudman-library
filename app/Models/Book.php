@@ -15,7 +15,8 @@ class Book extends Model
 
     public static array $formats = ['PDF', 'EPUB', 'Físico', 'Audiolibro'];
 
-    public function loans() {
+    public function loans() 
+    {
         
         return $this->hasMany(Loan::class);
     }

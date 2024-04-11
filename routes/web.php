@@ -12,8 +12,8 @@ Route::controller(BookController::class)->group(function(){
 });
 
 Route::controller(LoanController::class)->group(function(){
-    Route::get('/loans/create/{book}','create')->name('loans.create');
     Route::get('/loans','index')->name('loans.index');
+    Route::get('/loans/create/{book}','create')->name('loans.create');
     Route::post('/loans','store')->name('loans.store');
     Route::delete('/loans/{loan}','destroy')->name('loans.destroy');
 

@@ -17,12 +17,4 @@ class BookController extends Controller
         return view('books.index', compact('books'));
     }
 
-    
-    public function show(Book $book)
-    {
-        return view('books.show',['book'=>$book]);
-    }
-
-  
-   
 }

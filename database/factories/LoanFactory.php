@@ -27,7 +27,6 @@ class LoanFactory extends Factory
             'borrowed_by'=>fake()->name(),
             'checkout_date'=>$checkoutDate,
             'due_date'=>$dueDate,
-            'returned'=>fake()->randomElement([0,1])
             
         ];
     }

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('borrowed_by');
             $table->date('checkout_date');
             $table->date('due_date')->nullable();
-            $table->boolean('returned')->defalut(0);
             $table->timestamps();
         });
     }

@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        Loan::factory(30)->create();
+        Loan::factory(10)->create();
 
         
     }

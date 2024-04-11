@@ -15,7 +15,7 @@ class LoanController extends Controller
      */
     public function index()
     {
-        $loans = Loan::all();
+        $loans = Loan::orderBy('created_at', 'desc')->get();
         foreach ($loans as $loan){
             $loan->checkout_date = Carbon::parse($loan->checkout_date);
             $loan['fromCheckoutToNow']=floor($loan->checkout_date->diffInDays(Carbon::now()));
@@ -26,14 +26,11 @@ class LoanController extends Controller
             $loan->due_date=$loan->due_date->format('d/m/Y');
 
         }
-        //dd($loans);
-
         return view('loans.index', compact('loans'));
     }
 
     public function create(Book $book)
     {
-
         return view('loans.create', ['book' => $book]);
     }
 
@@ -46,7 +43,7 @@ class LoanController extends Controller
             $loan['due_date'] = $checkoutDate->addDays(30);
 
         Loan::create($loan);
-        return redirect()->route('books.index')->with('success', 'Libro prrestado con éxito!');
+        return redirect()->route('loans.index')->with('success', 'Libro prrestado con éxito!');
         }
     }
     /**

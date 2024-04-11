@@ -1,7 +1,6 @@
 <x-layout>
 
     <h2 class="text-2xl text-center">Libros prestados</h2>
-
     <div class="mt-10 flex flex-wrap gap-8 justify-center">
        
     @foreach ($loans as $loan)

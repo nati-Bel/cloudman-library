@@ -10,7 +10,10 @@ class BookController extends Controller
     
     public function index()
     {
-        $books = Book::whereDoesntHave('loans')->get();
+        $filters = request()->only(
+            'search');
+        
+        $books = Book::whereDoesntHave('loans')->filter($filters)->latest()->get();
         return view('books.index', compact('books'));
     }
 

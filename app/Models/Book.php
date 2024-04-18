@@ -12,6 +12,8 @@ use Illuminate\Database\Query\Builder as QueryBuilder;
 class Book extends Model
 {
     use HasFactory;
+    protected $fillable = ['title', 'author', 'format'];
+
 
     public static array $formats = ['PDF', 'EPUB', 'Físico', 'Audiolibro'];
 

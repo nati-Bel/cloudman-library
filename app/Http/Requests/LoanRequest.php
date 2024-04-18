@@ -26,4 +26,16 @@ class LoanRequest extends FormRequest
             'checkout_date'=> 'required|date'
         ];
     }
+
+    public function messages():array
+    {
+        return [
+            'borrowed_by.required'=> 'Obligatorio indicar el nombre.',
+            'borrowed_by.min'=> 'El nombre tiene que tener por lo menos 3 caracteres.',
+            'borrowed_by.max'=> 'El nombre tiene que tener como mucho 30 caracteres.',
+            'checkout_date.required'=> 'Obligatorio indicar la fecha de préstamo',
+            'checkout_date.date'=> 'La fecha no tiene formato válido',
+
+        ];
+    }
 }

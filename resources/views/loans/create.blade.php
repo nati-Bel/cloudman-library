@@ -20,6 +20,9 @@
                         class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-200 focus:border-slate-200 block w-full p-2.5" 
                         placeholder="Escribe el nombre del empleado" 
                         required>
+                @error('borrowed_by')
+                    <div class="text-red-500">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-5" x-data="{ checkoutDate: '', dueDate: '', showDueDate: false }">
@@ -31,7 +34,10 @@
                         class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-200 focus:border-slate-200 block w-full p-2.5" 
                         x-model="checkoutDate" 
                         @input="showDueDate = true; dueDate = new Date(new Date(checkoutDate).getTime() + (30 * 24 * 60 * 60 * 1000)).toLocaleDateString()">
-                
+                @error('checkout_date')
+                    <div class="text-red-500">{{ $message }}</div>
+                @enderror
+
                 <p class="text-sm font-semibold mt-5" x-show="showDueDate">
                     Tienes 30 días para devolver el libro. Deberás devolverlo antes del <span x-text="dueDate"></span>.
                 </p>

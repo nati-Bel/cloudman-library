@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        User::factory()->create([
+            'name'=>'Nati',
+            'email'=>'nati@belzi.com'
+        ]);
         
         $titles=[
             "Mi Vida: La Autobiografía de Nelson Mandela",

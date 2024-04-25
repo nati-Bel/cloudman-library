@@ -30,7 +30,7 @@
                 </li>
                 <li>|</li>
                 <li>
-                    <form action="POST" action="{{route('auth.destroy')}}">
+                    <form method="POST" action="{{route('auth.destroy')}}">
                         @csrf
                         @method('DELETE')
                         <button>Salir</button>

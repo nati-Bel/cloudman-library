@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h2 class="text-2xl text-center">Libros disponibles</h2>
+    <h2 class="text-3xl font-semibold text-center">Libros disponibles</h2>
 
     <div x-data="">
         <form action="{{route('books.index')}}" method="GET" x-ref="searchForm" class="flex justify-center items-center gap-4 mt-5">

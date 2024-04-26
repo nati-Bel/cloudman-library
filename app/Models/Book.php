@@ -23,6 +23,11 @@ class Book extends Model
         return $this->hasMany(Loan::class);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public function scopeFilter(Builder | QueryBuilder $query, array $filters) : Builder|QueryBuilder
     {
         

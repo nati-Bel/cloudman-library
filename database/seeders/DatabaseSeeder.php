@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Book;
 use App\Models\Loan;
+use App\Models\Review;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,11 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::factory(30)->create();
 
         User::factory()->create([
             'name'=>'Nati',
             'email'=>'nati@belzi.com'
         ]);
+
+        
         
         $titles=[
             "Mi Vida: La Autobiografía de Nelson Mandela",
@@ -45,16 +49,15 @@ class DatabaseSeeder extends Seeder
             "La Construcción Social de la Realidad",
         ];
 
-        
 
         foreach ($titles as $title)  {
             Book::factory()->create([
-                'title' => $title
-            ]);
+                                'title' => $title]);
         }
 
-        Loan::factory(10)->create();
+        Review::factory(200)->create();
 
-        
+        Loan::factory(30)->create();
+
     }
 }
